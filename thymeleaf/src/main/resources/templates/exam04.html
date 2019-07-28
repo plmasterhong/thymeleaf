@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ksmart</title>
+</head>
+<body>
+	<h1>thymeleaf exam04</h1><br>
+	
+	<table border="1">
+	    <tr>
+	      <td>아이디</td>
+	      <td>비밀번호</td>
+	      <td>level</td>
+	      <td>이름</td>
+	      <td>이메일</td>
+	    </tr>
+	    
+	    <tr th:each="member : ${list}">
+	       <td th:text="${member.memberId}"></td>
+	       <td th:text="${member.memberPw}"></td>
+	       <td th:text="${member.memberLevel}"></td>
+	       <td th:text="${member.memberName}"></td>
+	       <td>[[${member.memberEmail}]]</td>
+	    </tr>    
+	</table>
+</body>
+</html>

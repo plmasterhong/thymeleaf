@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ksmart</title>
+</head>
+<body>
+	<h1 th:text="${title}"></h1><br>
+	<h1 th:text="${'날짜 : ' + now}"></h1><br>
+	<div th:with="nowValue=${#dates.createToday()}">
+		<h1>thymeleaf : [[${nowValue}]]</h1><br>
+	</div>
+	<h1 th:text="${'thymeleaf 포맷 : ' + #dates.format(now, 'yyyy-MM-dd HH:mm:ss')}"></h1><br>	
+	<h1 th:text="${'가격 : ' + price}"></h1><br>
+	<h1 th:text="${'가격 포맷 : ' + #numbers.formatInteger(price,3,'COMMA')}"></h1><br>		
+</body>
+</html>

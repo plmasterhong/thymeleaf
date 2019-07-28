@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ksmart</title>
+</head>
+<body>
+	<h1>thymeleaf exam05</h1><br>
+	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>index</th>
+				<th>count</th>
+				<th>size</th>
+				<th>odd/even</th>
+				<th>first/last</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="member, lists : ${list}">
+				<td th:text="${lists.index}"></td>
+				<td th:text="${lists.count}"></td>
+				<td th:text="${lists.size}"></td>
+				<td th:text="${lists.odd + '/' + lists.even}"></td>
+				<td th:text="${lists.first + '/' + lists.last}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
